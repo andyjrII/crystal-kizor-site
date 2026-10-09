@@ -82,33 +82,67 @@ function ChapterSection({
         </div>
         {chapter.id === 'coka' ? (
           <figure className='project'>
-            <Photo
-              src='/img/centre-wide.webp'
-              alt='Community centre with a curved thatched roof and people gathered outside'
-              sizes='100vw'
-              className='wide'
-            />
-            <div className='thumbs'>
+            <p className='project-label'>Featured project</p>
+            <h3 className='project-title'>Community Centre</h3>
+            {/* TODO: replace this intro with the real project details. */}
+            <p className='project-intro'>
+              A community building designed for shade, airflow and gathering.
+            </p>
+            {/* TODO: check the three caption texts against the real project details. */}
+            <div className='shot'>
               <Photo
-                src='/img/centre-court.webp'
-                alt='Courtyard with a large tree opening through the roof'
-                sizes='(max-width: 800px) 50vw, 25vw'
+                src='/img/centre-wide.webp'
+                alt='Community centre with a curved thatched roof and people gathered outside'
+                sizes='100vw'
+                className='wide'
               />
-              <Photo
-                src='/img/centre-hall.webp'
-                alt='Interior gallery with perforated brick walls and a timber roof'
-                sizes='(max-width: 800px) 50vw, 25vw'
-              />
+              <figcaption className='shot-caption'>
+                <strong>Shade</strong>
+                <span>
+                  Deep roof overhangs keep the building cool in the heat.
+                </span>
+              </figcaption>
             </div>
-            <figcaption>
-              Featured project: Community Centre. Earth, timber and shade
-              doing the work of air conditioning.
-            </figcaption>
+            <div className='shots'>
+              <div className='shot'>
+                <Photo
+                  src='/img/centre-court.webp'
+                  alt='Courtyard with a large tree opening through the roof'
+                  sizes='(max-width: 800px) 100vw, 50vw'
+                />
+                <figcaption className='shot-caption'>
+                  <strong>Gathering</strong>
+                  <span>A courtyard opening around a large tree.</span>
+                </figcaption>
+              </div>
+              <div className='shot'>
+                <Photo
+                  src='/img/centre-hall.webp'
+                  alt='Interior gallery with perforated brick walls and a timber roof'
+                  sizes='(max-width: 800px) 100vw, 50vw'
+                />
+                <figcaption className='shot-caption'>
+                  <strong>Airflow</strong>
+                  <span>Perforated brick walls let air through.</span>
+                </figcaption>
+              </div>
+            </div>
+            <a
+              className='link project-more'
+              href={chapters.find((c) => c.id === 'coka')?.href ?? '#'}
+            >
+              See more Studio COKA work
+            </a>
           </figure>
         ) : null}
         <a className='bridge' href={`#${chapter.bridgeTo}`}>
           <span className='bridge-text'>{chapter.bridge}</span>
-          <span className='bridge-next'>{bridgeLabel(chapter.bridgeTo)}</span>
+          <span className='bridge-next' aria-hidden='true'>
+            &gt;
+          </span>
+          <span className='visually-hidden'>
+            {bridgeLabel(chapter.bridgeTo)}
+          </span>
         </a>
       </div>
     </section>
@@ -162,13 +196,22 @@ export default function Home() {
               they are for.
             </p>
           </div>
-          <Photo
-            src='/img/portrait.webp'
-            alt='Crystal Kizor seated in her design studio'
-            sizes='(max-width: 800px) 90vw, 40vw'
-            className='arch'
-            priority
-          />
+          <div className='hero-media'>
+            <Photo
+              src='/img/portrait.webp'
+              alt='Crystal Kizor seated in her design studio'
+              sizes='(max-width: 800px) 90vw, 40vw'
+              className='arch'
+              priority
+            />
+            <Image
+              src='/img/logo-signature.png'
+              alt="Crystal Kizor's signature"
+              width={405}
+              height={132}
+              className='signature'
+            />
+          </div>
         </section>
 
         <section className='index' aria-labelledby='index-title'>
@@ -227,7 +270,13 @@ export default function Home() {
           height={160}
           className='mono'
         />
-        <p>Crystal Kizor &middot; Architect, designer and founder</p>
+        <Image
+          src='/img/logo-signature.png'
+          alt="Crystal Kizor's signature"
+          width={405}
+          height={132}
+          className='foot-signature'
+        />
         <a className='link' href={`mailto:${contactEmail}`}>
           {contactEmail}
         </a>
