@@ -1,12 +1,6 @@
 import Image from 'next/image';
-import {
-  build,
-  teach,
-  serve,
-  routes,
-  contactEmail,
-  type Brand,
-} from '@/lib/brands';
+import { chapters, routes, contactEmail, type Chapter } from '@/lib/brands';
+import ChapterNav from '@/components/ChapterNav';
 
 function Photo({
   src,
@@ -28,92 +22,54 @@ function Photo({
   );
 }
 
-function Feature({ b }: { b: Brand }) {
+function ChapterMedia({ chapter }: { chapter: Chapter }) {
+  if (chapter.image) {
+    return (
+      <Photo
+        src={chapter.image}
+        alt={chapter.alt ?? chapter.name}
+        sizes='(max-width: 800px) 100vw, 45vw'
+      />
+    );
+  }
   return (
-    <article className='feature'>
-      {b.image && (
-        <Photo
-          src={b.image}
-          alt={b.alt ?? ''}
-          sizes='(max-width: 800px) 100vw, 45vw'
-        />
-      )}
-      <h3>{b.name}</h3>
-      <p>{b.blurb}</p>
-      <a className='link' href={b.href}>
-        {b.cta}
-      </a>
-    </article>
+    <div className='type-panel' aria-hidden='true'>
+      <span>{chapter.name}</span>
+    </div>
   );
 }
 
-export default function Home() {
+function ChapterSection({
+  chapter,
+  index,
+}: {
+  chapter: Chapter;
+  index: number;
+}) {
+  const flip = index % 2 === 1;
   return (
-    <>
-      <header className='bar'>
-        <a href='#top' aria-label='Crystal Kizor home'>
-          <Image
-            src='/img/logo-wide.png'
-            alt='Crystal Kizor'
-            width={534}
-            height={43}
-            className='bar-logo'
-            priority
-          />
-        </a>
-        <nav aria-label='Primary'>
-          <a href='#build'>Build</a>
-          <a href='#teach'>Teach</a>
-          <a href='#serve'>Serve</a>
-          <a href='#next'>Contact</a>
-        </nav>
-      </header>
-
-      <main id='top'>
-        <section className='hero'>
-          <div className='hero-copy'>
-            <h1>
-              Designing spaces, objects and futures rooted in climate, culture
-              and human flourishing.
-            </h1>
-            <p className='lede'>
-              Crystal Kizor is an architect, designer and founder creating
-              climate-responsive places, African-rooted objects and pathways for
-              young people to thrive. Her work sits at the intersection of
-              architecture, education and community care, with one conviction
-              underneath: good design gives people room to flourish.
-            </p>
-            <div className='actions'>
-              <a className='btn' href='#build'>
-                Explore the work
-              </a>
-              <a className='btn ghost' href='#next'>
-                Find your next step
-              </a>
-            </div>
+    <section
+      id={chapter.id}
+      data-tone={chapter.tone}
+      className='chapter'
+      aria-labelledby={`${chapter.id}-title`}
+    >
+      <div className='chapter-inner'>
+        <div className={`chapter-grid${flip ? ' flip' : ''}`}>
+          <div className='chapter-copy'>
+            <span className='tag'>{chapter.kind}</span>
+            <h2 id={`${chapter.id}-title`}>{chapter.name}</h2>
+            <p>{chapter.blurb}</p>
+            <p className='audience'>{chapter.audience}</p>
+            <a className='btn' href={chapter.href}>
+              {chapter.cta}
+            </a>
           </div>
-          <Photo
-            src='/img/portrait.webp'
-            alt='Crystal Kizor seated in her design studio'
-            sizes='(max-width: 800px) 90vw, 40vw'
-            className='arch'
-            priority
-          />
-        </section>
-
-        <section id='build' className='band'>
-          <div className='head'>
-            <h2>Build</h2>
-            <p>
-              Architecture and objects shaped by climate, material intelligence
-              and the realities of everyday life.
-            </p>
+          <div className='chapter-media'>
+            <ChapterMedia chapter={chapter} />
           </div>
-          <div className='duo'>
-            {build.map((b) => (
-              <Feature key={b.name} b={b} />
-            ))}
-          </div>
+        </div>
+        {chapter.id === 'coka' ? (
           <figure className='project'>
             <Photo
               src='/img/centre-wide.webp'
@@ -134,68 +90,84 @@ export default function Home() {
               />
             </div>
             <figcaption>
-              Community Centre Project, Studio COKA. Earth, timber and shade
+              Featured project: Community Centre. Earth, timber and shade
               doing the work of air conditioning.
             </figcaption>
           </figure>
-        </section>
+        ) : null}
+        <a className='bridge' href={`#${chapter.bridgeTo}`}>
+          <span className='bridge-text'>{chapter.bridge}</span>
+          <span className='bridge-next'>Next</span>
+        </a>
+      </div>
+    </section>
+  );
+}
 
-        <section id='teach' className='band teach'>
-          <div className='head'>
-            <h2>Teach and share</h2>
-            <p>
-              Learning, conversation and writing that help architects and
-              communities imagine and build better futures.
+export default function Home() {
+  return (
+    <>
+      <header className='bar'>
+        <div className='bar-top'>
+          <a href='#top' aria-label='Crystal Kizor home'>
+            <Image
+              src='/img/logo-wide.png'
+              alt='Crystal Kizor'
+              width={534}
+              height={43}
+              className='bar-logo'
+            />
+          </a>
+          <nav aria-label='Primary'>
+            <a href='#next'>Contact</a>
+          </nav>
+        </div>
+        <ChapterNav chapters={chapters} />
+      </header>
+
+      <main id='top'>
+        <section className='hero'>
+          <div className='hero-copy'>
+            <h1>Crystal Kizor designs buildings, furniture and futures.</h1>
+            <p className='lede'>
+              She is an architect, designer and founder. She runs an
+              architecture studio, makes African-rooted furniture, teaches
+              architects, speaks on design and cities, and leads two
+              initiatives for young people.
+            </p>
+            <p className='thread'>
+              Scroll to follow the thread, from the buildings to the people
+              they are for.
             </p>
           </div>
-          <div className='split'>
-            <ul className='rows'>
-              {teach.map((b) => (
-                <li key={b.name}>
-                  <h3>{b.name}</h3>
-                  <p>{b.blurb}</p>
-                  <a className='link' href={b.href}>
-                    {b.cta}
+          <Photo
+            src='/img/portrait.webp'
+            alt='Crystal Kizor seated in her design studio'
+            sizes='(max-width: 800px) 90vw, 40vw'
+            className='arch'
+            priority
+          />
+        </section>
+
+        <section className='index' aria-labelledby='index-title'>
+          <div className='index-inner'>
+            <h2 id='index-title'>Seven ways her work reaches people</h2>
+            <ul className='tiles'>
+              {chapters.map((c) => (
+                <li key={c.id} data-tone={c.tone}>
+                  <a href={`#${c.id}`}>
+                    <span className='tile-name'>{c.name}</span>
+                    <span className='tile-kind'>{c.kind}</span>
                   </a>
                 </li>
               ))}
             </ul>
-            <Photo
-              src='/img/talks.webp'
-              alt='Crystal Kizor at her desk with a podcast microphone'
-              sizes='(max-width: 800px) 100vw, 40vw'
-              className='side'
-            />
           </div>
         </section>
 
-        <section id='serve' className='band dark'>
-          <div className='head'>
-            <h2>Serve</h2>
-            <p>
-              Initiatives that open doors, strengthen identity and create room
-              for young people to thrive.
-            </p>
-          </div>
-          <div className='duo even'>
-            {serve.map((b) => (
-              <article className='feature' key={b.name}>
-                {b.image ? (
-                  <Photo
-                    src={b.image}
-                    alt={b.alt ?? ''}
-                    sizes='(max-width: 800px) 100vw, 45vw'
-                  />
-                ) : null}
-                <h3>{b.name}</h3>
-                <p>{b.blurb}</p>
-                <a className='link' href={b.href}>
-                  {b.cta}
-                </a>
-              </article>
-            ))}
-          </div>
-        </section>
+        {chapters.map((c, i) => (
+          <ChapterSection key={c.id} chapter={c} index={i} />
+        ))}
 
         <section id='next' className='band next'>
           <div className='head'>
