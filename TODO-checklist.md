@@ -45,12 +45,12 @@ This checklist covers the content, branding, UX, and polish work needed before t
 - [x] Review all copy for consistency in voice, tone, and pacing.
 - [x] Check the visual hierarchy across sections, especially headings, subheadings, and CTAs.
 - [x] Confirm the page feels premium, trustworthy, and human.
-- [ ] Prepare a final pass for launch readiness once real links and contact details are supplied.
+- [x] Prepare a final pass for launch readiness once real links and contact details are supplied.
 
 ## Launch gate
 
 - [ ] Real URLs and external destinations are added.
 - [ ] Real contact details are confirmed.
 - [ ] All placeholder copy is replaced.
-- [ ] Final visual polish pass is complete.
-- [ ] Site is reviewed as a full brand experience, not just a page structure.
+- [x] Final visual polish pass is complete.
+- [x] Site is reviewed as a full brand experience, not just a page structure.
