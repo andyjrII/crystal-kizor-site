@@ -24,14 +24,14 @@ This checklist covers the content, branding, UX, and polish work needed before t
 - [x] Consider introducing one deeper accent tone to add more visual character and premium contrast.
 - [x] Review type hierarchy to make sure the headings feel more editorial and less generic.
 - [x] Ensure the layout has enough contrast and rhythm to feel intentional and premium rather than simply neat.
-- [ ] Check whether the imagery supports the brand story with stronger architectural and emotional presence.
+- [x] Check whether the imagery supports the brand story with stronger architectural and emotional presence.
 
 ## UX and structure
 
-- [ ] Confirm the flow from hero to build to teach to serve to next steps feels coherent and intentional.
-- [ ] Make sure the “Where to next?” section guides users to the right part of the site clearly.
-- [ ] Confirm the page reads as a strong narrative rather than a collection of disconnected cards.
-- [ ] Review spacing and section balance to make sure the story feels calm but not underpowered.
+- [x] Confirm the flow from hero to build to teach to serve to next steps feels coherent and intentional.
+- [x] Make sure the “Where to next?” section guides users to the right part of the site clearly.
+- [x] Confirm the page reads as a strong narrative rather than a collection of disconnected cards.
+- [x] Review spacing and section balance to make sure the story feels calm but not underpowered.
 
 ## Content quality
 
