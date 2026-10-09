@@ -195,6 +195,13 @@ export default function Home() {
               Scroll to follow the thread, from the buildings to the people
               they are for.
             </p>
+            <a
+              href='#index'
+              className='scroll-cue'
+              aria-label='Scroll to see how her work reaches people'
+            >
+              <span aria-hidden='true' />
+            </a>
           </div>
           <div className='hero-media'>
             <Photo
@@ -214,7 +221,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className='index' aria-labelledby='index-title'>
+        <section id='index' className='index' aria-labelledby='index-title'>
           <div className='index-inner'>
             <h2 id='index-title'>Seven ways her work reaches people</h2>
             <p className='index-caption'>
