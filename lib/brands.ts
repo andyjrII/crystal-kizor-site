@@ -12,6 +12,7 @@ export type Chapter = {
   tone: Tone;
   image?: string;
   alt?: string;
+  points?: string[];
   bridge: string;
   bridgeTo: string;
 };
@@ -91,6 +92,13 @@ export const chapters: Chapter[] = [
     cta: 'Read the latest',
     href: '#',
     tone: 'sand',
+    // TODO: these should become links to real articles.
+    points: [
+      'Climate-responsive design',
+      'African cities',
+      'Place and culture',
+      'The built environment',
+    ],
     bridge: 'All of it is for the people who inherit it.',
     bridgeTo: 'ako',
   },
@@ -120,6 +128,7 @@ export const chapters: Chapter[] = [
     cta: 'Join Alive and Free',
     href: '#',
     tone: 'indigo',
+    points: ['Truth', 'Healing', 'Freedom', 'Identity', 'Purpose'],
     bridge: 'Not sure where you fit?',
     bridgeTo: 'next',
   },

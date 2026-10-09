@@ -32,11 +32,22 @@ function ChapterMedia({ chapter }: { chapter: Chapter }) {
       />
     );
   }
-  return (
-    <div className='type-panel' aria-hidden='true'>
-      <span>{chapter.name}</span>
-    </div>
-  );
+  if (chapter.points && chapter.points.length > 0) {
+    return (
+      <ul className='points'>
+        {chapter.points.map((point) => (
+          <li key={point}>{point}</li>
+        ))}
+      </ul>
+    );
+  }
+  return null;
+}
+
+function bridgeLabel(bridgeTo: string): string {
+  if (bridgeTo === 'next') return 'Next: Where to go from here';
+  const destination = chapters.find((c) => c.id === bridgeTo);
+  return destination ? `Next: ${destination.name}` : 'Next';
 }
 
 function ChapterSection({
@@ -97,7 +108,7 @@ function ChapterSection({
         ) : null}
         <a className='bridge' href={`#${chapter.bridgeTo}`}>
           <span className='bridge-text'>{chapter.bridge}</span>
-          <span className='bridge-next'>Next</span>
+          <span className='bridge-next'>{bridgeLabel(chapter.bridgeTo)}</span>
         </a>
       </div>
     </section>
@@ -108,21 +119,32 @@ export default function Home() {
   return (
     <>
       <header className='bar'>
-        <div className='bar-top'>
-          <a href='#top' aria-label='Crystal Kizor home'>
-            <Image
-              src='/img/logo-wide.png'
-              alt='Crystal Kizor'
-              width={534}
-              height={43}
-              className='bar-logo'
-            />
-          </a>
-          <nav aria-label='Primary'>
-            <a href='#next'>Contact</a>
-          </nav>
+        <a href='#top' aria-label='Crystal Kizor home' className='bar-mark'>
+          <Image
+            src='/img/logo-mono.png'
+            alt='Crystal Kizor'
+            width={202}
+            height={160}
+            className='bar-mono'
+          />
+        </a>
+        <div className='bar-main'>
+          <div className='bar-top'>
+            <a href='#top' aria-label='Crystal Kizor home'>
+              <Image
+                src='/img/logo-wide.png'
+                alt='Crystal Kizor'
+                width={534}
+                height={43}
+                className='bar-logo'
+              />
+            </a>
+            <nav aria-label='Primary'>
+              <a href='#next'>Contact</a>
+            </nav>
+          </div>
+          <ChapterNav chapters={chapters} />
         </div>
-        <ChapterNav chapters={chapters} />
       </header>
 
       <main id='top'>
@@ -152,9 +174,16 @@ export default function Home() {
         <section className='index' aria-labelledby='index-title'>
           <div className='index-inner'>
             <h2 id='index-title'>Seven ways her work reaches people</h2>
+            <p className='index-caption'>
+              Studio COKA is the practice. Everything else grows from it.
+            </p>
             <ul className='tiles'>
               {chapters.map((c) => (
-                <li key={c.id} data-tone={c.tone}>
+                <li
+                  key={c.id}
+                  data-tone={c.tone}
+                  className={c.id === 'coka' ? 'tile-lead' : undefined}
+                >
                   <a href={`#${c.id}`}>
                     <span className='tile-name'>{c.name}</span>
                     <span className='tile-kind'>{c.kind}</span>
