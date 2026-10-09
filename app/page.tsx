@@ -105,8 +105,8 @@ export default function Home() {
           <div className='head'>
             <h2>Build</h2>
             <p>
-              Buildings and objects, designed for their climate and the people
-              who use them.
+              Architecture and objects shaped by climate, material intelligence
+              and the way people really live.
             </p>
           </div>
           <div className='duo'>
@@ -144,8 +144,8 @@ export default function Home() {
           <div className='head'>
             <h2>Teach and share</h2>
             <p>
-              What Crystal has learned, passed on to architects, audiences and
-              readers.
+              Learning, conversation and writing that help architects and
+              communities build better futures.
             </p>
           </div>
           <div className='split'>
@@ -172,7 +172,10 @@ export default function Home() {
         <section id='serve' className='band dark'>
           <div className='head'>
             <h2>Serve</h2>
-            <p>Opportunity and purpose for children and young people.</p>
+            <p>
+              Initiatives that open doors, strengthen identity and create space
+              for young people to thrive.
+            </p>
           </div>
           <div className='duo even'>
             {serve.map((b) => (

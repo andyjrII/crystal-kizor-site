@@ -4,19 +4,19 @@ This checklist covers the content, branding, UX, and polish work needed before t
 
 ## Brand and positioning
 
-- [ ] Tighten the core positioning statement so it clearly communicates Crystal’s role, values, and design philosophy.
-- [ ] Define the strongest single-line brand summary for the hero and metadata.
-- [ ] Review whether each section clearly reflects the brand’s real focus: architecture, material culture, education, and youth impact.
-- [ ] Ensure the tone feels warm, grounded, premium, and human rather than generic or overly corporate.
+- [x] Tighten the core positioning statement so it clearly communicates Crystal’s role, values, and design philosophy.
+- [x] Define the strongest single-line brand summary for the hero and metadata.
+- [x] Review whether each section clearly reflects the brand’s real focus: architecture, material culture, education, and youth impact.
+- [x] Ensure the tone feels warm, grounded, premium, and human rather than generic or overly corporate.
 
 ## Copy and messaging
 
-- [ ] Replace generic portfolio phrasing with more specific, distinctive language that feels personal to Crystal.
-- [ ] Clarify how each area differs: Build, Teach, and Serve.
-- [ ] Ensure the hero copy explains the deeper purpose behind the work, not just the surface description.
-- [ ] Review all headings for stronger confidence and more memorable wording.
-- [ ] Remove any copy that sounds vague, abstract, or interchangeable with other design brands.
-- [ ] Add a little more narrative depth to show why the work matters beyond aesthetics.
+- [x] Replace generic portfolio phrasing with more specific, distinctive language that feels personal to Crystal.
+- [x] Clarify how each area differs: Build, Teach, and Serve.
+- [x] Ensure the hero copy explains the deeper purpose behind the work, not just the surface description.
+- [x] Review all headings for stronger confidence and more memorable wording.
+- [x] Remove any copy that sounds vague, abstract, or interchangeable with other design brands.
+- [x] Add a little more narrative depth to show why the work matters beyond aesthetics.
 
 ## Visual design
 

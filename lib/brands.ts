@@ -13,7 +13,8 @@ export const contactEmail = 'hello@example.com'; // TODO: confirm Crystal's cont
 export const build: Brand[] = [
   {
     name: 'Studio COKA',
-    blurb: 'Architecture, interior design and construction, shaped by climate and the way people actually live.',
+    blurb:
+      'Architecture and interiors shaped by climate, material intelligence and the way people really live.',
     cta: 'Visit Studio COKA',
     href: '#',
     image: '/img/coka.webp',
@@ -21,7 +22,8 @@ export const build: Brand[] = [
   },
   {
     name: 'ELEvated',
-    blurb: 'Furniture and products rooted in African materials, context and ideas, made to be used every day.',
+    blurb:
+      'Furniture and everyday objects rooted in African craft, material honesty and lived use.',
     cta: 'See ELEvated',
     href: '#',
     image: '/img/elevated.webp',
@@ -32,19 +34,22 @@ export const build: Brand[] = [
 export const teach: Brand[] = [
   {
     name: 'The Effective Architect',
-    blurb: 'Learning and media for architects and built-environment professionals who want to grow and build better careers.',
+    blurb:
+      'Practical learning for architects and built-environment professionals who want to grow with clarity and purpose.',
     cta: 'Start learning',
     href: '#',
   },
   {
     name: 'Speaking',
-    blurb: 'Talks and conversations on climate-responsive design, African cities, entrepreneurship and the built environment.',
+    blurb:
+      'Keynotes and conversations on climate-responsive design, African cities, entrepreneurship and the built environment.',
     cta: 'Invite Crystal to speak',
     href: '#',
   },
   {
     name: 'Writing and research',
-    blurb: 'Ideas, authorship and research published under Crystal Kizor.',
+    blurb:
+      'Essays, ideas and research exploring place, culture, architecture and the future of building.',
     cta: 'Read the latest',
     href: '#',
   },
@@ -53,7 +58,8 @@ export const teach: Brand[] = [
 export const serve: Brand[] = [
   {
     name: 'AKO Alliance',
-    blurb: 'Expanding access to education and opening up opportunities for children and young people.',
+    blurb:
+      'Expanding access to education and opportunity for children and young people in ways that open future possibilities.',
     cta: 'Support AKO Alliance',
     href: '#',
     image: '/img/ako.webp',
@@ -61,7 +67,8 @@ export const serve: Brand[] = [
   },
   {
     name: 'Alive and Free',
-    blurb: 'A Christian youth movement helping young people walk in truth, healing, freedom, identity and purpose in Christ.',
+    blurb:
+      'A Christian youth movement helping young people walk in truth, identity, healing and purpose.',
     cta: 'Join Alive and Free',
     href: '#',
   },
@@ -69,7 +76,15 @@ export const serve: Brand[] = [
 
 export const routes = [
   { ask: 'I want to build or renovate', go: 'Studio COKA', href: '#' },
-  { ask: 'I am an architect who wants to grow', go: 'The Effective Architect', href: '#' },
+  {
+    ask: 'I am an architect who wants to grow',
+    go: 'The Effective Architect',
+    href: '#',
+  },
   { ask: 'I am organising an event', go: 'Speaking', href: '#' },
-  { ask: 'I want to help young people thrive', go: 'AKO Alliance and Alive and Free', href: '#' },
+  {
+    ask: 'I want to help young people thrive',
+    go: 'AKO Alliance and Alive and Free',
+    href: '#',
+  },
 ];
