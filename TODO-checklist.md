@@ -20,10 +20,10 @@ This checklist covers the content, branding, UX, and polish work needed before t
 
 ## Visual design
 
-- [ ] Confirm the palette still feels warm, tactile, and sophisticated without becoming too soft or bland.
-- [ ] Consider introducing one deeper accent tone to add more visual character and premium contrast.
-- [ ] Review type hierarchy to make sure the headings feel more editorial and less generic.
-- [ ] Ensure the layout has enough contrast and rhythm to feel intentional and premium rather than simply neat.
+- [x] Confirm the palette still feels warm, tactile, and sophisticated without becoming too soft or bland.
+- [x] Consider introducing one deeper accent tone to add more visual character and premium contrast.
+- [x] Review type hierarchy to make sure the headings feel more editorial and less generic.
+- [x] Ensure the layout has enough contrast and rhythm to feel intentional and premium rather than simply neat.
 - [ ] Check whether the imagery supports the brand story with stronger architectural and emotional presence.
 
 ## UX and structure
