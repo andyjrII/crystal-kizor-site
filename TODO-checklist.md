@@ -35,16 +35,16 @@ This checklist covers the content, branding, UX, and polish work needed before t
 
 ## Content quality
 
-- [ ] Add more precise, credible, and memorable proof points to support the brand story.
-- [ ] Review whether each project/initiative description explains impact, not just activity.
-- [ ] Ensure each feature speaks to audience intent: client, architect, organizer, supporter, or learner.
-- [ ] Balance the narrative between practice, thought leadership, and service.
+- [x] Add more precise, credible, and memorable proof points to support the brand story.
+- [x] Review whether each project/initiative description explains impact, not just activity.
+- [x] Ensure each feature speaks to audience intent: client, architect, organizer, supporter, or learner.
+- [x] Balance the narrative between practice, thought leadership, and service.
 
 ## Final polish
 
-- [ ] Review all copy for consistency in voice, tone, and pacing.
-- [ ] Check the visual hierarchy across sections, especially headings, subheadings, and CTAs.
-- [ ] Confirm the page feels premium, trustworthy, and human.
+- [x] Review all copy for consistency in voice, tone, and pacing.
+- [x] Check the visual hierarchy across sections, especially headings, subheadings, and CTAs.
+- [x] Confirm the page feels premium, trustworthy, and human.
 - [ ] Prepare a final pass for launch readiness once real links and contact details are supplied.
 
 ## Launch gate

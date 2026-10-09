@@ -79,9 +79,9 @@ export default function Home() {
             <p className='lede'>
               Crystal Kizor is an architect, designer and founder creating
               climate-responsive places, African-rooted objects and pathways for
-              young people to thrive. Her work moves between architecture,
-              education and community impact with one conviction underneath:
-              good design gives people room to flourish.
+              young people to thrive. Her work sits at the intersection of
+              architecture, education and community care, with one conviction
+              underneath: good design gives people room to flourish.
             </p>
             <div className='actions'>
               <a className='btn' href='#build'>
