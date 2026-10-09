@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import { chapters, routes, contactEmail, type Chapter } from '@/lib/brands';
+import { chapters, routes, type Chapter } from '@/lib/brands';
 import ChapterNav from '@/components/ChapterNav';
+import ContactForm from '@/components/ContactForm';
 
 function Photo({
   src,
@@ -58,6 +59,8 @@ function ChapterSection({
   index: number;
 }) {
   const flip = index % 2 === 1;
+  const cokaHref = chapters.find((c) => c.id === 'coka')?.href ?? '#next';
+  const cokaPlaceholder = cokaHref === '#';
   return (
     <section
       id={chapter.id}
@@ -72,7 +75,13 @@ function ChapterSection({
             <h2 id={`${chapter.id}-title`}>{chapter.name}</h2>
             <p>{chapter.blurb}</p>
             <p className='audience'>{chapter.audience}</p>
-            <a className='btn' href={chapter.href}>
+            <a
+              className='btn'
+              href={chapter.href === '#' ? '#next' : chapter.href}
+              {...(chapter.href === '#'
+                ? { 'data-interest': chapter.id }
+                : {})}
+            >
               {chapter.cta}
             </a>
           </div>
@@ -129,7 +138,8 @@ function ChapterSection({
             </div>
             <a
               className='link project-more'
-              href={chapters.find((c) => c.id === 'coka')?.href ?? '#'}
+              href={cokaPlaceholder ? '#next' : cokaHref}
+              {...(cokaPlaceholder ? { 'data-interest': 'coka' } : {})}
             >
               See more Studio COKA work
             </a>
@@ -174,7 +184,22 @@ export default function Home() {
               />
             </a>
             <nav aria-label='Primary'>
-              <a href='#next'>Contact</a>
+              <a href='#next'>
+                <svg
+                  className='phone-icon'
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  aria-hidden='true'
+                >
+                  <path d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z' />
+                </svg>
+                Contact us
+              </a>
             </nav>
           </div>
           <ChapterNav chapters={chapters} />
@@ -259,13 +284,14 @@ export default function Home() {
           <ul className='routes'>
             {routes.map((r) => (
               <li key={r.ask}>
-                <a href={r.href}>
+                <a href={r.href} data-interest={r.interest}>
                   <span className='ask'>{r.ask}</span>
                   <span className='go'>{r.go}</span>
                 </a>
               </li>
             ))}
           </ul>
+          <ContactForm />
         </section>
       </main>
 
@@ -284,9 +310,6 @@ export default function Home() {
           height={132}
           className='foot-signature'
         />
-        <a className='link' href={`mailto:${contactEmail}`}>
-          {contactEmail}
-        </a>
       </footer>
     </>
   );

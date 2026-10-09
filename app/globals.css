@@ -130,6 +130,13 @@ a {
 }
 .bar-top nav a {
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.phone-icon {
+  width: 1em;
+  height: 1em;
 }
 .bar-top nav a:hover {
   text-decoration: underline;
@@ -569,6 +576,48 @@ figcaption {
 .go {
   color: var(--muted);
   text-align: left;
+}
+
+.contact-form {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  max-width: 40rem;
+}
+.contact-form h3 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+.field label {
+  font-weight: 500;
+}
+.field input,
+.field select,
+.field textarea {
+  font: inherit;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--fg);
+  border-radius: 0;
+  padding: 0.7rem 0.9rem;
+  width: 100%;
+}
+.field textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+.contact-form .btn {
+  margin-top: 1.5rem;
+}
+.contact-form .btn:disabled {
+  opacity: 0.6;
+}
+.form-note {
+  margin-top: 1rem;
+  font-weight: 500;
 }
 
 .foot {

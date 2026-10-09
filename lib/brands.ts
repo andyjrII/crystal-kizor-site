@@ -17,8 +17,6 @@ export type Chapter = {
   bridgeTo: string;
 };
 
-export const contactEmail = 'hello@example.com'; // TODO: confirm Crystal's contact email
-
 export const chapters: Chapter[] = [
   {
     id: 'coka',
@@ -28,7 +26,7 @@ export const chapters: Chapter[] = [
       'For homeowners, developers and institutions who want buildings that suit their climate.',
     blurb:
       'Architecture and interiors shaped by climate, local context and the realities of everyday life.',
-    cta: 'Visit Studio COKA',
+    cta: 'Enquire about Studio COKA',
     href: '#',
     tone: 'bone',
     image: '/img/coka.webp',
@@ -44,7 +42,7 @@ export const chapters: Chapter[] = [
       'For people furnishing homes, workplaces and hospitality spaces.',
     blurb:
       'Furniture and everyday objects rooted in African craft, material honesty and long-term use.',
-    cta: 'See ELEvated',
+    cta: 'Enquire about ELEvated',
     href: '#',
     tone: 'sand',
     image: '/img/elevated.webp',
@@ -60,7 +58,7 @@ export const chapters: Chapter[] = [
       'For architects and built-environment professionals who want to grow their careers.',
     blurb:
       'Practical learning for architects and professionals who want to grow with clarity, confidence and purpose.',
-    cta: 'Start learning',
+    cta: 'Join the waitlist',
     href: '#',
     tone: 'cocoa',
     image: '/img/about.webp',
@@ -89,7 +87,7 @@ export const chapters: Chapter[] = [
       'For readers, students and practitioners curious about place and culture.',
     blurb:
       'Essays, ideas and research exploring place, culture, architecture and the conditions that make communities thrive.',
-    cta: 'Read the latest',
+    cta: 'Get in touch',
     href: '#',
     tone: 'sand',
     // TODO: these should become links to real articles.
@@ -109,7 +107,7 @@ export const chapters: Chapter[] = [
     audience: 'For children and young people, and the partners who back them.',
     blurb:
       'Expanding access to education and opportunity for children and young people, creating pathways for a stronger future.',
-    cta: 'Support AKO Alliance',
+    cta: 'Ask about AKO Alliance',
     href: '#',
     tone: 'moss',
     image: '/img/ako.webp',
@@ -125,7 +123,7 @@ export const chapters: Chapter[] = [
       'For young people seeking truth, healing, freedom and purpose in Christ.',
     blurb:
       'A youth movement helping young people walk in truth, identity, healing and purpose as they grow into themselves.',
-    cta: 'Join Alive and Free',
+    cta: 'Ask about Alive and Free',
     href: '#',
     tone: 'indigo',
     points: ['Truth', 'Healing', 'Freedom', 'Identity', 'Purpose'],
@@ -135,16 +133,28 @@ export const chapters: Chapter[] = [
 ];
 
 export const routes = [
-  { ask: 'I want to build or renovate', go: 'Studio COKA', href: '#coka' },
+  {
+    ask: 'I want to build or renovate',
+    go: 'Studio COKA',
+    href: '#coka',
+    interest: 'coka',
+  },
   {
     ask: 'I am an architect who wants to grow',
     go: 'The Effective Architect',
     href: '#tea',
+    interest: 'tea',
   },
-  { ask: 'I am organising an event', go: 'Speaking', href: '#speaking' },
+  {
+    ask: 'I am organising an event',
+    go: 'Speaking',
+    href: '#speaking',
+    interest: 'speaking',
+  },
   {
     ask: 'I want to help young people thrive',
     go: 'AKO Alliance and Alive and Free',
     href: '#ako',
+    interest: 'ako',
   },
 ];
