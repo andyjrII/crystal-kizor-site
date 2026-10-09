@@ -106,7 +106,7 @@ export default function Home() {
             <h2>Build</h2>
             <p>
               Architecture and objects shaped by climate, material intelligence
-              and the way people really live.
+              and the realities of everyday life.
             </p>
           </div>
           <div className='duo'>
@@ -145,7 +145,7 @@ export default function Home() {
             <h2>Teach and share</h2>
             <p>
               Learning, conversation and writing that help architects and
-              communities build better futures.
+              communities imagine and build better futures.
             </p>
           </div>
           <div className='split'>
@@ -173,7 +173,7 @@ export default function Home() {
           <div className='head'>
             <h2>Serve</h2>
             <p>
-              Initiatives that open doors, strengthen identity and create space
+              Initiatives that open doors, strengthen identity and create room
               for young people to thrive.
             </p>
           </div>
@@ -201,7 +201,8 @@ export default function Home() {
           <div className='head'>
             <h2>Where to next?</h2>
             <p>
-              Tell us why you are here and we will point you to the right door.
+              Tell us what brings you here and we will point you to the right
+              door.
             </p>
           </div>
           <ul className='routes'>
