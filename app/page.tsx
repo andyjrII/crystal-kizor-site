@@ -9,16 +9,25 @@ function Photo({
   sizes,
   className,
   priority,
+  quality,
 }: {
   src: string;
   alt: string;
   sizes: string;
   className?: string;
   priority?: boolean;
+  quality?: number;
 }) {
   return (
     <div className={`photo ${className ?? ''}`}>
-      <Image src={src} alt={alt} fill sizes={sizes} priority={priority} />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        priority={priority}
+        quality={quality}
+      />
     </div>
   );
 }
@@ -235,6 +244,7 @@ export default function Home() {
               sizes='(max-width: 800px) 90vw, 40vw'
               className='arch'
               priority
+              quality={70}
             />
             <Image
               src='/img/logo-signature.png'
@@ -302,6 +312,7 @@ export default function Home() {
           width={202}
           height={160}
           className='mono'
+          loading='lazy'
         />
         <Image
           src='/img/logo-signature.png'
@@ -309,6 +320,7 @@ export default function Home() {
           width={405}
           height={132}
           className='foot-signature'
+          loading='lazy'
         />
       </footer>
     </>
