@@ -5,7 +5,7 @@ Next.js (App Router) + TypeScript. Mostly static, with two small client componen
     npm run dev      # http://localhost:3000
     npm run build
 
-Copy and links live in `lib/brands.ts`. Chapters whose `href` is `'#'` render their button as an enquiry link to the contact form (`#next`); set a real URL there when one exists.
+Copy and links live in `lib/brands.ts`. Chapters whose `href` is `'#'` render their button as an enquiry link to the contact form (`#contact` inside the `#next` section); set a real URL there when one exists.
 
 ## Contact form
 

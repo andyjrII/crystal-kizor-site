@@ -50,7 +50,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form className='contact-form' onSubmit={onSubmit}>
+    <form id='contact' className='contact-form' onSubmit={onSubmit}>
       <h3>Send an enquiry</h3>
       <div className='field'>
         <label htmlFor='contact-name'>Your name</label>

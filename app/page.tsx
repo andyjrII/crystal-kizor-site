@@ -59,7 +59,7 @@ function ChapterSection({
   index: number;
 }) {
   const flip = index % 2 === 1;
-  const cokaHref = chapters.find((c) => c.id === 'coka')?.href ?? '#next';
+  const cokaHref = chapters.find((c) => c.id === 'coka')?.href ?? '#contact';
   const cokaPlaceholder = cokaHref === '#';
   return (
     <section
@@ -77,7 +77,7 @@ function ChapterSection({
             <p className='audience'>{chapter.audience}</p>
             <a
               className='btn'
-              href={chapter.href === '#' ? '#next' : chapter.href}
+              href={chapter.href === '#' ? '#contact' : chapter.href}
               {...(chapter.href === '#'
                 ? { 'data-interest': chapter.id }
                 : {})}
@@ -138,7 +138,7 @@ function ChapterSection({
             </div>
             <a
               className='link project-more'
-              href={cokaPlaceholder ? '#next' : cokaHref}
+              href={cokaPlaceholder ? '#contact' : cokaHref}
               {...(cokaPlaceholder ? { 'data-interest': 'coka' } : {})}
             >
               See more Studio COKA work
@@ -184,7 +184,7 @@ export default function Home() {
               />
             </a>
             <nav aria-label='Primary'>
-              <a href='#next'>
+              <a href='#contact'>
                 <svg
                   className='phone-icon'
                   xmlns='http://www.w3.org/2000/svg'
